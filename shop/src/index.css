@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 body,
 a,
 div {
@@ -83,6 +85,7 @@ div {
 }
 
 .cart-buy-btn {
+  margin-top: 20px;
   width: 600px;
   height: 40px;
   font-size: 20px;
@@ -92,4 +95,95 @@ div {
   border: 2px solid rgb(0, 155, 169);
   border-radius: 6px;
   color: rgb(0, 155, 169);
+}
+
+.item-container {
+  margin-top: 20px;
+  width: 600px;
+  height: 100px;
+  border: 1px gray solid;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: row;
+}
+
+.item-container-left {
+  width: 250px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 16px;
+  justify-content: center;
+}
+
+.item-container-right {
+  width: 350px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.item-name {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.item-detail {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+}
+
+.item-price {
+  font-size: 16px;
+}
+
+.item-quantity {
+  margin-left: 16px;
+  font-size: 12px;
+  color: gray;
+}
+
+.quantity-box {
+  width: 180px;
+  height: 36px;
+  border: 1px gray solid;
+  border-radius: 6px;
+  color: gray;
+  padding-left: 20px;
+}
+
+.shop-in-btn {
+  width: 120px;
+  height: 36px;
+  margin-left: 20px;
+  background-color: rgb(56, 152, 255);
+  border-radius: 6px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.last-bought-box {
+  margin-top: 40px;
+  color: gray;
+  font-size: 16px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  text-decoration: underline;
+}
+
+.price-input {
+  width: 220px;
+  height: 40px;
+  border: 2px solid gray;
+  border-radius: 8px;
+  font-size: 20px;
+  padding-left: 20px;
 }
