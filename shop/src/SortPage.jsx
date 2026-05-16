@@ -1,9 +1,15 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Item from "./Item";
-import { sortedData } from "./data/mockData";
 
 function SortPage() {
-  const [items, setItems] = useState(sortedData);
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    fetch("/data/sorted.json")
+      .then((response) => response.json())
+      .then((data) => setItems(data))
+      .catch((error) => console.error("데이터 로드 실패:", error));
+  }, []);
 
   const handleSort = (type) => {
     let sortedItems = [...items];

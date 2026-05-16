@@ -3,6 +3,7 @@ import { useState } from "react";
 
 function Navbar() {
   const [navClicked, setnavClicked] = useState(null);
+  const [isAdminClicked, setIsAdminClicked] = useState(false);
   const navigate = useNavigate();
 
   const navItems = [
@@ -19,6 +20,7 @@ function Navbar() {
         onClick={() => {
           navigate("/");
           setnavClicked(null);
+          setIsAdminClicked(false);
         }}
       />
       <div className="category-box">
@@ -28,6 +30,7 @@ function Navbar() {
             to={item.path}
             onClick={() => {
               setnavClicked(index);
+              setIsAdminClicked(false);
             }}
             style={{
               color: navClicked === index ? "rgb(56, 152, 255)" : "black",
@@ -36,7 +39,16 @@ function Navbar() {
           </Link>
         ))}
       </div>
-      <div className="admin-box">관리자</div>
+      <div
+        className="admin-box"
+        style={{ cursor: "pointer" }}
+        onClick={() => {
+          setIsAdminClicked(true);
+          navigate("/admin");
+          setnavClicked(null);
+        }}>
+        {isAdminClicked ? "사용자" : "관리자"}
+      </div>
     </div>
   );
 }

@@ -1,13 +1,15 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "./assets/vite.svg";
-import heroImg from "./assets/hero.png";
-import { priceSelectedData } from "./data/mockData";
+import { useState, useEffect } from "react";
 import Item from "./Item";
 
 function PricePage() {
-  const [count, setCount] = useState(0);
-  const [items, setItems] = useState(priceSelectedData.items);
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    fetch("/data/priceSelected.json")
+      .then((response) => response.json())
+      .then((data) => setItems(data.items || []))
+      .catch((error) => console.error("데이터 로드 실패:", error));
+  }, []);
 
   return (
     <>

@@ -187,3 +187,122 @@ div {
   font-size: 20px;
   padding-left: 20px;
 }
+
+.admin-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  margin-top: 40px;
+  padding-bottom: 80px;
+}
+
+.admin-section {
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.admin-section-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.admin-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.admin-row {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+
+.admin-input-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  width: 50%;
+}
+
+.admin-label {
+  width: 60px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.admin-input,
+.admin-select {
+  flex: 1;
+  height: 40px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 0 15px;
+  font-size: 15px;
+  color: #333;
+  outline: none;
+}
+
+.admin-input::placeholder {
+  color: #aaa;
+}
+
+.admin-select {
+  color: #777;
+}
+
+.admin-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 10px;
+}
+
+.admin-footer-right {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.admin-notice {
+  font-size: 12px;
+  color: #999;
+}
+
+.admin-btn-blue {
+  width: 120px;
+  height: 40px;
+  background-color: rgb(56, 152, 255);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.admin-btn-red {
+  width: 120px;
+  height: 40px;
+  background-color: rgb(235, 15, 15);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

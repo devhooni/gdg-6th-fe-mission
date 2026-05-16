@@ -1,13 +1,15 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "./assets/vite.svg";
-import heroImg from "./assets/hero.png";
-import { categoryData } from "./data/mockData";
+import { useState, useEffect } from "react";
 import Item from "./Item";
 
 function CategoryPage() {
-  const [count, setCount] = useState(0);
-  const [items, setItems] = useState(categoryData);
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    fetch("/data/category.json")
+      .then((response) => response.json())
+      .then((data) => setItems(data))
+      .catch((error) => console.error("데이터 로드 실패:", error));
+  }, []);
 
   return (
     <>
