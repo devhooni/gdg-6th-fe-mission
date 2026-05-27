@@ -1,11 +1,15 @@
 function Item({ item }) {
+  const itemName = item.itemName || item.productName || "상품명 없음";
+  const price = item.price ?? item.productPrice ?? 0;
+  const quantity = item.quantity ?? item.productAmount ?? 0;
+
   return (
     <div className="item-container">
       <div className="item-container-left">
-        <div className="item-name">{item.itemName}</div>
+        <div className="item-name">{itemName}</div>
         <div className="item-detail">
-          <div className="item-price">{item.price.toLocaleString()}원</div>
-          <div className="item-quantity">남은수량: {item.quantity}개</div>
+          <div className="item-price">{price.toLocaleString()}원</div>
+          <div className="item-quantity">수량: {quantity}개</div>
         </div>
       </div>
 
@@ -14,7 +18,7 @@ function Item({ item }) {
           <option value="" disabled hidden>
             개수 입력..
           </option>
-          {Array.from({ length: item.quantity }, (_, i) => i + 1).map((num) => (
+          {Array.from({ length: quantity }, (_, i) => i + 1).map((num) => (
             <option key={num} value={num}>
               {num}
             </option>
